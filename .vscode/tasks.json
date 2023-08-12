@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // 默认第一条为编译命令
+            "label": "build",
+            // 使用 g++ 编译
+            "command": "g++",
+            // 参数包含所有使用到的源文件
+            "args": [
+                "main.cpp",
+                "add.cpp",
+                "sub.cpp",
+                "-o",
+                "main.exe"
+            ],
+            // 默认在 shell 中执行编译命令
+            "type": "shell"
+        },
+        {
+            // 编译 debug 用的目标文件
+            "label": "build-debug",
+            "command": "g++",
+            // -g 参数用于编译可 debug 的目标文件
+            "args": [
+                "-g",
+                "main.cpp",
+                "add.cpp",
+                "sub.cpp",
+                "-o",
+                "debug.exe"
+            ],
+            "type": "shell"
+        }
+    ]
+}
