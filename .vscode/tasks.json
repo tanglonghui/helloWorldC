@@ -2,17 +2,29 @@
     "version": "2.0.0",
     "tasks": [
         {
-            // 默认第一条为编译命令
             "label": "build",
-            // 使用 g++ 编译
             "command": "g++",
-            // 参数包含所有使用到的源文件
             "args": [
                 "main.cpp",
                 "add.cpp",
                 "sub.cpp",
                 "-o",
                 "main.exe"
+            ],
+            // 默认在 shell 中执行编译命令
+            "type": "shell"
+        },
+        {
+            "label": "build_with_so",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "add.cpp",
+                "sub.cpp",
+                "-o",
+                "main.exe",
+                "-L.",
+                "lib.so"
             ],
             // 默认在 shell 中执行编译命令
             "type": "shell"
@@ -31,6 +43,33 @@
                 "debug.exe"
             ],
             "type": "shell"
+        },
+        {
+            "label": "build-so",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "add.cpp",
+                "sub.cpp",
+                "-fPIC",
+                "-shared",
+                "-o",
+                "main.so"
+            ],
+            "type": "shell",
+        }
+        ,
+        {
+            "label": "build-lib",
+            "command": "g++",
+            "args": [
+                "lib.cpp",
+                "-fPIC",
+                "-shared",
+                "-o",
+                "lib.so"
+            ],
+            "type": "shell",
         }
     ]
 }
