@@ -38,7 +38,7 @@ int main()
     // *prd = 6;
     cout << "2、地址:" << prd << endl;
     cout << "2、值: " << *prd << endl;
-    
+
     *prd++ = 6;
     *prd++ = 5;
 
