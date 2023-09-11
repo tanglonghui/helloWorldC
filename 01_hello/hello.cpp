@@ -5,8 +5,5 @@ int main() {
     std::cout << "hello" << std::endl;
     std::cout << "你好" << std::endl;
 
-    int i = 20;
-    int *p = &i;
-    int t = *p;
     return 0;
 }
