@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 struct info
@@ -6,6 +7,13 @@ struct info
     /* data */
     int age;
     string name;
+} ;
+
+struct info2
+{
+    /* data */
+    int age;
+    char name[7];
 } ;
 
 info *p;
@@ -38,5 +46,15 @@ int main() {
     std::cout << sizeof(p) << std::endl;
     std::cout << "3-------" << std::endl;
 
+    info2 s;
+    info2 *in=&s;
+    in->age =5;
+    memset(in->name,'1', 7);
+    std::cout << "4-------" << std::endl;
+    std::cout << in->age << std::endl;
+    std::cout << in->name << std::endl;
+    std::cout << &in << std::endl;
+    std::cout << sizeof(in->name) << std::endl;
+    std::cout << "5-------" << std::endl;
     return 0;
 }
